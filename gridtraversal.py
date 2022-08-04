@@ -31,8 +31,14 @@ class Solution:
         # return: int
         
         # TODO: Write code below to return an int with the solution to the prompt
-        pass
+        grid = [[1 for _ in range(n)] for _ in range(m)]
 
+
+        for i in range(1, m):
+            for j in range(1, n):
+                grid[i][j] = grid[i-1][j] + grid[i][j-1]
+        return grid[-1][-1]
+        
 def main():
     num1 = int(input())
     num2 = int(input())
